@@ -4,47 +4,24 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
+// schema.prisma
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "sqlite" // Base de datos local para desarrollo
   url      = env("DATABASE_URL")
 }
-//Base Para Login
 
 model User {
   id        Int      @id @default(autoincrement())
+  name      String
   email     String   @unique
   password  String
-  name      String?
-  userType  UserType
-  roles     UserRole[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-enum UserType {
-  INNOVATOR
-  BUSINESS
-}
-
-model Role {
-  id        Int      @id @default(autoincrement())
-  name      String   @unique
-  users     UserRole[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model UserRole {
-  id        Int      @id @default(autoincrement())
-  userId    Int
-  roleId    Int
-  user      User     @relation(fields: [userId], references: [id])
-  role      Role     @relation(fields: [roleId], references: [id])
+  role      String   // Cambiado a String para evitar problemas con enum en SQLite
   createdAt DateTime @default(now())
   
-  @@unique([userId, roleId])
+  @@map("users") // Cambiamos el nombre de la tabla en la base de datos para seguir buenas prácticas
 }
