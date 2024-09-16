@@ -189,7 +189,7 @@ body{
 /*=============================
 	End Global CSS 
 ===============================*/
-/* Header Styles */
+
 /* Header Styles */
 .header {
     position: fixed;
@@ -565,7 +565,6 @@ body{
 /*===========================
 	End Hero Area CSS
 =============================*/
-
 /*=============================
     Start Schedule CSS
 ===============================*/
@@ -629,6 +628,30 @@ body{
 .schedule .single-schedule a:hover {
     color: #fff; /* Cambia a blanco al pasar el mouse */
     text-decoration: underline;
+}
+
+/*=============================
+    Custom Link Styles
+===============================*/
+/* Asegurar que el enlace abarque toda la tarjeta */
+.custom-card-link {
+    display: block;
+    text-decoration: none; /* Eliminar el subrayado */
+}
+
+.custom-card-link .single-schedule {
+    cursor: pointer; /* Cambiar el cursor a mano al pasar sobre la tarjeta */
+}
+
+/* Estilo en hover para el enlace */
+.custom-card-link:hover .single-schedule {
+    transform: translateY(-5px); /* Mantiene el efecto hover actual */
+}
+
+/* Asegurar que el color del texto no cambie al hacer clic */
+.custom-card-link .single-content h4,
+.custom-card-link .single-content p {
+    color: inherit;
 }
 
 /*=============================
