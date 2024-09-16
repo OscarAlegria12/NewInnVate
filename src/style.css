@@ -189,7 +189,7 @@ body{
 /*=============================
 	End Global CSS 
 ===============================*/
-
+/* Header Styles */
 /* Header Styles */
 .header {
     position: fixed;
@@ -345,21 +345,61 @@ body{
     display: inline-block;
 }
 
-.header .right-bar a {
-    color: #fff;
-    height: 35px;
-    width: 35px;
-    line-height: 35px;
-    text-align: center;
-    background: #1a76d1;
-    border-radius: 4px;
-    display: block;
-    font-size: 12px;
+.header .user-icon {
+    position: relative;
+    display: inline-block;
 }
 
-.header .right-bar li a:hover {
-    color: #fff;
-    background: #27AE60;
+.header .user-icon-link {
+    color: #1a76d1;
+    font-size: 24px;
+    line-height: 35px;
+    display: inline-block;
+}
+
+.header .user-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    width: 200px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.header .user-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header .user-dropdown ul li {
+    border-bottom: 1px solid #eee;
+}
+
+.header .user-dropdown ul li:last-child {
+    border: none;
+}
+
+.header .user-dropdown ul li a {
+    display: block;
+    padding: 12px 15px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: background 0.2s ease;
+}
+
+.header .user-dropdown ul li a:hover {
+    background: #f5f5f5;
+    color: #1A76D1;
+}
+
+.header .user-icon:hover .user-dropdown {
+    display: block;
 }
 
 /* Search */
@@ -425,10 +465,6 @@ body{
     animation: fadeInDown 0.5s both 0.1s;
     box-shadow: 0px 0px 13px #00000054;
 }
-
-/*=========================
-	End Header CSS
-===========================*/
 
 /*===========================
 	Start Hero Area CSS
