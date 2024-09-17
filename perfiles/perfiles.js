@@ -2,7 +2,7 @@
 var modal = document.getElementById("profileModal");
 
 // Obtener los botones "More information"
-var moreInfoButtons = document.querySelectorAll(".more-info-btn");
+var moreInfoButtons = document.querySelectorAll(".profile-btn");
 
 // Obtener el elemento <span> que cierra el modal
 var span = document.getElementsByClassName("close")[0];

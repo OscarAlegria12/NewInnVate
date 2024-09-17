@@ -1,14 +1,6 @@
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-}
-
 .hackathon-container {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 80px auto; /* Agregar margen superior para desplazar hacia abajo */
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -16,7 +8,7 @@ body {
     text-align: center;
 }
 
-.logo {
+.hackathon-container .logo {
     width: 150px;
     height: auto;
     margin-bottom: 20px;
